@@ -9,5 +9,16 @@ import { DataService } from './data.service';
 export class AppComponent {
   objectKeys = Object.keys;
   cryptos: any;
-  
+
+
+  constructor(private _data: DataService) {
+
+  }
+ ngOnInit() {
+  this._data.getPrices()
+  .subsribe(res => res {
+   this.cryptos = res;
+   console.log(res);
+   })
+ }
 }
