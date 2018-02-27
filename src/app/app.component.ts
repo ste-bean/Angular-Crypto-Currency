@@ -15,10 +15,11 @@ export class AppComponent {
 
   }
  ngOnInit() {
-  this._data.getPrices()
-  .subsribe(res => res {
-   this.cryptos = res;
-   console.log(res);
-   })
- }
+    this._data.getPrices()
+      .subscribe(res => {
+        this.cryptos = res;
+        //console.log(res);
+      });
+  }
+
 }
