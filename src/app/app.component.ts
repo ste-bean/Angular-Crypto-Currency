@@ -10,15 +10,15 @@ export class AppComponent {
   objectKeys = Object.keys;
   cryptos: any;
 
-
   constructor(private _data: DataService) {
 
   }
- ngOnInit() {
+
+   ngOnInit() {
     this._data.getPrices()
       .subscribe(res => {
         this.cryptos = res;
-        //console.log(res);
+        console.log(res);
       });
   }
 
